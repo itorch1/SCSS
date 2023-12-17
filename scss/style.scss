@@ -1,0 +1,58 @@
+@import 'config';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: $font-stack;
+    background-color: $light-color;
+    line-height: 1.6;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+.showcase{
+    @include set-background-color($primary-color);
+    height: 600px;
+
+    nav{
+        @extend %flex-space-between;
+
+        ul{
+            @extend %flex-center;
+            list-style: none;
+
+            li{
+                padding: 15px;
+            }
+        }
+        a{
+            color: set-text-color($primary-color);
+
+            &:hover{
+                color: $secondary-color;
+            }
+        }
+    }
+
+    
+
+    &-content{
+        margin-top: 30px;
+        @extend %flex-center;
+
+        img{
+            width: 50%;
+        }
+        h1{
+            font-size: 50px;
+            line-height: 1.2;
+        }
+    }
+}
+@import 'utilities';
+@import 'buttons';
+@import 'mobile';
